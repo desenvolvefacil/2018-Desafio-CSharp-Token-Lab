@@ -115,10 +115,10 @@
             this.CadastrarLinkLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CadastrarLinkLabel.Location = new System.Drawing.Point(213, 261);
             this.CadastrarLinkLabel.Name = "CadastrarLinkLabel";
-            this.CadastrarLinkLabel.Size = new System.Drawing.Size(70, 17);
+            this.CadastrarLinkLabel.Size = new System.Drawing.Size(48, 17);
             this.CadastrarLinkLabel.TabIndex = 8;
             this.CadastrarLinkLabel.TabStop = true;
-            this.CadastrarLinkLabel.Text = "Cadastrar";
+            this.CadastrarLinkLabel.Text = "Salvar";
             this.CadastrarLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.CadastrarLinkLabel_LinkClicked);
             // 
             // ExcluirLinkLabel
@@ -140,7 +140,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(346, 305);
             this.Controls.Add(this.ExcluirLinkLabel);
             this.Controls.Add(this.CadastrarLinkLabel);
             this.Controls.Add(this.DescricaoTextBox);

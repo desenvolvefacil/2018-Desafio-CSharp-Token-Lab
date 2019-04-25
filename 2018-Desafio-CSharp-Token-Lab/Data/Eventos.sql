@@ -1,10 +1,11 @@
-﻿CREATE TABLE [dbo].[Eventos]
-(
-	[Id] INT NOT NULL PRIMARY KEY identity, 
-    [Data] DATE NOT NULL, 
-    [Inicio] TIME NOT NULL, 
-    [Fim] TIME NOT NULL, 
-    [Descricao] varchar(max) NULL, 
-    [IdUsuario] INT NOT NULL, 
-    CONSTRAINT [FK_Eventos_Usuarios] FOREIGN KEY ([IdUsuario]) REFERENCES [Usuarios]([Id])
-)
+﻿CREATE TABLE [dbo].[Eventos] (
+    [Id]        INT      IDENTITY (1, 1) NOT NULL,
+    [Data]      DATE     NOT NULL,
+    [Inicio]    TIME (7) NOT NULL,
+    [Fim]       TIME (7) NOT NULL,
+    [Descricao] VARCHAR (MAX)    NULL,
+    [IdUsuario] INT      NOT NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC),
+    CONSTRAINT [FK_Eventos_Usuarios] FOREIGN KEY ([IdUsuario]) REFERENCES [dbo].[Usuarios] ([Id])
+);
+

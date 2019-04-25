@@ -22,11 +22,12 @@ namespace _2018_Desafio_CSharp_Token_Lab
             //cria o evento para quando a aplicação for fechada
             Application.ApplicationExit += new EventHandler(Application_ApplicationExit);
 
+            //chama a tela de login
             LoginForm loginForm = new LoginForm();
             loginForm.ShowDialog();
 
 
-
+            //caso tenha logado corretamente chama a tela de eventos
             if (Util.UsuarioLogado != null)
             {
                 Application.Run(new EventosForm());
