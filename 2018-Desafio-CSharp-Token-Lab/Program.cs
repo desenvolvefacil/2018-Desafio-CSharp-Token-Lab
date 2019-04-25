@@ -1,4 +1,6 @@
-﻿using System;
+﻿using _2018_Desafio_CSharp_Token_Lab.Model;
+using _2018_Desafio_CSharp_Token_Lab.Utils;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +18,27 @@ namespace _2018_Desafio_CSharp_Token_Lab
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+
+            //cria o evento para quando a aplicação for fechada
+            Application.ApplicationExit += new EventHandler(Application_ApplicationExit);
+
+            LoginForm loginForm = new LoginForm();
+            loginForm.ShowDialog();
+
+
+
+            if (Util.UsuarioLogado != null)
+            {
+                Application.Run(new EventosForm());
+
+            }
+
+        }
+
+        private static void Application_ApplicationExit(object sender, EventArgs e)
+        {
+            //Fecha a conexão com o banco de dados
+            Util.DB.Dispose();
         }
     }
 }

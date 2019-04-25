@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace _2018_Desafio_CSharp_Token_Lab
 {
-    public partial class Form1 : Form
+    public partial class EventosForm : Form
     {
-        public Form1()
+        public EventosForm()
         {
             InitializeComponent();
         }
