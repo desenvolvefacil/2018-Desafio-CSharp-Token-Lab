@@ -37,6 +37,7 @@
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(460, 291);
             this.Name = "EventosForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Eventos";
             this.ResumeLayout(false);
 

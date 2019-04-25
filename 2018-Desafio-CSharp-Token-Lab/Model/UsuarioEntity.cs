@@ -14,17 +14,8 @@ namespace _2018_Desafio_CSharp_Token_Lab.Model
     
     public partial class UsuarioEntity
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public UsuarioEntity()
-        {
-            this.Eventos = new HashSet<EventoEntity>();
-        }
-    
         public int Id { get; set; }
         public string Login { get; set; }
         public string Senha { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<EventoEntity> Eventos { get; set; }
     }
 }

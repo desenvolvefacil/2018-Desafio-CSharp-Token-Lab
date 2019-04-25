@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using _2018_Desafio_CSharp_Token_Lab.Enum;
+using _2018_Desafio_CSharp_Token_Lab.Model;
 
 namespace _2018_Desafio_CSharp_Token_Lab
 {
@@ -30,9 +32,10 @@ namespace _2018_Desafio_CSharp_Token_Lab
 
             myMonthCalendar.DoubleClick += Calendar_Double_Click;
 
-            this.Controls.Add(myMonthCalendar);
-
+            //marca em negrito as datas que tem eventos
             MarcarEventos();
+
+            this.Controls.Add(myMonthCalendar);
 
         }
 
@@ -40,13 +43,60 @@ namespace _2018_Desafio_CSharp_Token_Lab
         {
             DateTime dataSelecionada = myMonthCalendar.SelectionStart;
 
-            //int a = 10;
+            EventoEntity entity;
+
+            //verifica se já tem evento pra data
+            if (myMonthCalendar.BoldedDates.Contains(dataSelecionada))
+            {
+                entity = EventoModel.Buscar(dataSelecionada);
+            }
+            else
+            {
+                entity = new EventoEntity() { Data = dataSelecionada };
+            }
+
+            //abre a tela pra cadastro ou edição
+
+            CadastroEventoForm form = new CadastroEventoForm(entity);
+            form.ShowDialog();
+
+            StatusEnum status = form.Status;
+
+            switch (status)
+            {
+                case StatusEnum.INCLUIDO:
+                    {
+                        myMonthCalendar.AddBoldedDate(dataSelecionada);
+                        myMonthCalendar.UpdateBoldedDates();
+
+                        break;
+                    }
+                case StatusEnum.REMOVIDO:
+                    {
+                        myMonthCalendar.RemoveBoldedDate(dataSelecionada);
+                        myMonthCalendar.UpdateBoldedDates();
+                        break;
+                    }
+                default:
+                    {
+
+                        break;
+                    }
+            }
+
         }
 
 
         private void MarcarEventos()
         {
+            List<EventoEntity> lista = EventoModel.Listar();
 
+            foreach (EventoEntity item in lista)
+            {
+                myMonthCalendar.AddBoldedDate(item.Data);   
+            }
+
+            myMonthCalendar.UpdateBoldedDates();
         }
     }
 

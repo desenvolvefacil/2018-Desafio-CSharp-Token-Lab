@@ -20,6 +20,6 @@ namespace _2018_Desafio_CSharp_Token_Lab.Model
         public System.TimeSpan Fim { get; set; }
         public string Descricao { get; set; }
     
-        public virtual UsuarioEntity Usuarios { get; set; }
+        public virtual UsuarioEntity Usuario { get; set; }
     }
 }
