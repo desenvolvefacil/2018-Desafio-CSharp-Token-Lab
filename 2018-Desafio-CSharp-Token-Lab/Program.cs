@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+//https://docs.microsoft.com/pt-br/ef/ef6/querying/
 namespace _2018_Desafio_CSharp_Token_Lab
 {
     static class Program

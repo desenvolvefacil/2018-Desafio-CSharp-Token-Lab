@@ -4,7 +4,7 @@
     [Data] DATE NOT NULL, 
     [Inicio] TIME NOT NULL, 
     [Fim] TIME NOT NULL, 
-    [Descricao] TEXT NULL, 
+    [Descricao] varchar(max) NULL, 
     [IdUsuario] INT NOT NULL, 
     CONSTRAINT [FK_Eventos_Usuarios] FOREIGN KEY ([IdUsuario]) REFERENCES [Usuarios]([Id])
 )

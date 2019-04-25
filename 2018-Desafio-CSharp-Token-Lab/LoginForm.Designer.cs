@@ -90,8 +90,9 @@
             this.CadastrarLinkLabel.Text = "Cadastrar";
             this.CadastrarLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.CadastrarLinkLabel_LinkClicked);
             // 
-            // Login
+            // LoginForm
             // 
+            this.AcceptButton = this.EntarButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(307, 192);
@@ -101,7 +102,7 @@
             this.Controls.Add(this.SenhaTextBox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.LoginTextBox);
-            this.Name = "Login";
+            this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.ResumeLayout(false);
